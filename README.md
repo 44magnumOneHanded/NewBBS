@@ -1,0 +1,2 @@
+# NewBBS
+houkagouyou2CH
