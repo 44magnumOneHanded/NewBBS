@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="高校生のための勉強・学校行事・部活動の掲示板">
+  <title>放課後ボード｜高校生の掲示板</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <div class="brand-mark">放</div>
+      <div>
+        <p class="eyebrow">HIGH SCHOOL COMMUNITY</p>
+        <h1>放課後ボード</h1>
+      </div>
+      <span class="header-tag">高校生の掲示板</span>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <p class="hero-label">AFTER SCHOOL, CONNECT.</p>
+      <h2>学校生活の「ちょっと聞きたい」を、<br>ここで共有しよう。</h2>
+      <p>勉強の質問も、行事のお知らせも、部活の仲間募集も。</p>
+    </section>
+
+    <section class="panel compose-panel">
+      <div class="section-heading">
+        <div><span class="step">01</span><h2>新しい投稿</h2></div>
+        <span class="small-note">気軽に書いてみよう</span>
+      </div>
+      <form id="post-form">
+        <div class="form-grid">
+          <label>ニックネーム
+            <input id="nickname" maxlength="20" placeholder="例：2年A組" required>
+          </label>
+          <label>カテゴリ
+            <select id="category">
+              <option value="勉強">📚 勉強</option>
+              <option value="学校行事">🎪 学校行事</option>
+              <option value="部活動">⚽ 部活動</option>
+              <option value="その他">💬 その他</option>
+            </select>
+          </label>
+        </div>
+        <label>投稿内容
+          <textarea id="content" rows="3" maxlength="300" placeholder="質問やお知らせを書いてください（300文字以内）" required></textarea>
+        </label>
+        <div class="form-footer">
+          <p class="privacy-note">※ 本名・住所・電話番号などの個人情報は書かないでください。</p>
+          <button type="submit">投稿する <span>→</span></button>
+        </div>
+        <p id="form-message" class="form-message" role="status"></p>
+      </form>
+    </section>
+
+    <section class="posts-section">
+      <div class="section-heading">
+        <div><span class="step">02</span><h2>みんなの投稿</h2></div>
+        <span id="post-count" class="count">0 POSTS</span>
+      </div>
+      <nav class="filters" aria-label="カテゴリで絞り込む">
+        <button class="filter active" data-filter="すべて">すべて</button>
+        <button class="filter" data-filter="勉強">📚 勉強</button>
+        <button class="filter" data-filter="学校行事">🎪 学校行事</button>
+        <button class="filter" data-filter="部活動">⚽ 部活動</button>
+        <button class="filter" data-filter="その他">💬 その他</button>
+      </nav>
+      <div id="posts" class="posts-grid" aria-live="polite"></div>
+      <p class="footer-note">放課後ボード · みんなが安心して使える場所にしよう。</p>
+    </section>
+  </main>
+  <footer>© 放課後ボード</footer>
+</body>
+</html>
